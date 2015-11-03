@@ -20,6 +20,7 @@ public class CannonBall {
     private double angle;
     private int size;
     private int g;
+    private int wind;
     private final int initVelocity = 120;
 
     /**
@@ -28,6 +29,7 @@ public class CannonBall {
      */
     public CannonBall() {
         g = -11;
+        wind = -1;
         angle = 0.0;
         xPosition = 0;
         yPosition = 0;
@@ -55,6 +57,9 @@ public class CannonBall {
      * @param current the current Cannonball object
      */
     public void calculate(CannonBall current) {
+
+        double xVel = current.getXVelocity() + wind;
+        current.setXVelocity((int) xVel);
 
         double yVel = current.getYVelocity() + g;
         current.setYVelocity((int) yVel);
@@ -85,8 +90,7 @@ public class CannonBall {
     public void paint(Canvas g) {
         Paint cannonball = new Paint();
         cannonball.setColor(Color.BLACK);
-        g.drawCircle(xPosition, g.getHeight() - yPosition - 150, size, cannonball);
-
+        g.drawCircle(xPosition, g.getHeight() - yPosition - 250 - size, size, cannonball);
     }
 
     /**
@@ -115,6 +119,7 @@ public class CannonBall {
 
     //set methods
     public void setXPosition(int newX) {xPosition = newX;}
+    public void setXVelocity(int newXVel) {xVelocity = newXVel;}
     public void setYPosition(int newY) {yPosition = newY;}
     public void setYVelocity(int newYVel) {yVelocity = newYVel;}
     public void setGravity(int newGrav) {g = newGrav;}

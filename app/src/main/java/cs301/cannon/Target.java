@@ -38,6 +38,7 @@ public class Target {
         }
     }
 
+
     /**
      * Draws the target
      *

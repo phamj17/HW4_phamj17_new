@@ -73,9 +73,11 @@ public class Animation extends CannonMainActivity implements Animator  {
 		target1.paint(g);
 		if (ball.targetHit(target0)) {
 			target0.setColor(backgroundColor());
+			target0.paint(g);
 		}
 		if (ball.targetHit(target1)) {
 			target1.setColor(backgroundColor());
+			target0.paint(g);
 		}
 		ball.paint(g);
 	}
