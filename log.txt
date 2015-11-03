@@ -1,0 +1,23 @@
+Date: 31 October 2015
+Problem: I had trouble implementing the Number Picker.
+Resource used: I browsed StackOverflow for a solution.
+Solution: I implemented the code found in StackOverflow.
+
+Date: 31 October 2015
+Problem: I had trouble rotating the cannon.
+Resource used: I browsed StackOverflow for a solution.
+Solution: I implemented the code found in StackOverflow; I saved the 
+	canvas, rotated it, then restored it.
+
+Date: 1 November 2015
+Problem: I wasn't able to create a sound when the cannon is fired.
+Resource used: I watched a Youtube video on how to implement a sound.
+Solution: I downloaded a cannon sound and created a MediaPlayer, like the video
+	instructed. However, the code wouldn't compile due to a creating a null
+	object, so I was not able to implement sound.
+
+Date: 1 November 2015
+Problem: I wasn't able to notify the user when a target is hit.
+Resource used: I browsed Stack Overflow for a solution.
+Solution: I implemented the code found on Stack Overflow, but the hitbox was extremely large,
+	so I wasn't able to complete that checkpoint.
