@@ -25,9 +25,10 @@ public class CannonMainActivity extends Activity {
 	private SeekBar angleSeek;
 	private TextView angleDisplay;
 	private NumberPicker gravity;
+	private MediaPlayer player;
 
 	private double degrees;
-	Animator testAnim;
+	private Animator testAnim;
 
 	private int gravValue;
 	private String[] nums = {"-11","-10","-9","-8","-7","-6","-5","-4","-3","-2","-1","0"};
@@ -42,6 +43,8 @@ public class CannonMainActivity extends Activity {
 
 		angleSeek = (SeekBar)findViewById(R.id.angleSeek);
 		angleDisplay = (TextView)findViewById(R.id.angleText);
+
+
 
 		gravity = (NumberPicker)findViewById(R.id.gravSelect);
 		gravity.setDisplayedValues(nums);
@@ -83,6 +86,9 @@ public class CannonMainActivity extends Activity {
 		LinearLayout mainLayout = (LinearLayout) this
 				.findViewById(R.id.topLevelLayout);
 		mainLayout.addView(myCanvas);
+
+		player = MediaPlayer.create(this, R.raw.cannonsound);
+		testAnim.setSound(player);
 
 	}
 

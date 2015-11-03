@@ -16,7 +16,7 @@ import java.util.Vector;
  * @author Justin Pham
  * @version November 2015
  */
-public class Animation implements Animator {
+public class Animation extends CannonMainActivity implements Animator  {
 
 	// instance variables
 	private boolean shoot = false;
@@ -26,6 +26,9 @@ public class Animation implements Animator {
 	private CannonBall ball = new CannonBall();
 	private Target target0 = new Target(0);
 	private Target target1 = new Target(1);
+
+	private MediaPlayer player;
+	private boolean sound;
 
 
 	/**
@@ -66,7 +69,6 @@ public class Animation implements Animator {
 		cannon.paint(g);
 
 		g.restore();
-		ball.paint(g);
 		target0.paint(g);
 		target1.paint(g);
 		if (ball.targetHit(target0)) {
@@ -75,6 +77,7 @@ public class Animation implements Animator {
 		if (ball.targetHit(target1)) {
 			target1.setColor(backgroundColor());
 		}
+		ball.paint(g);
 	}
 
 	/**
@@ -106,6 +109,11 @@ public class Animation implements Animator {
 			ball.setGravity(gravity);
 			ball.initVel(degrees);
 			shoot = true;
+
+			sound = true;
+			if (sound == true) {
+				this.player.start();
+			}
 		}
 	}
 
@@ -125,5 +133,7 @@ public class Animation implements Animator {
 	 */
 	public void getGravity(int newGrav) {gravity = newGrav;}
 
-
+	public void setSound(MediaPlayer MP) {
+		player = MP;
+	}
 }//class TextAnimator

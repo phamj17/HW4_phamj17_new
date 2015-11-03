@@ -74,5 +74,5 @@ public interface Animator {
 
 	public void getGravity(int newGrav);
 
-	//public void setMediaPlayer(MediaPlayer sound);
+	public void setSound(MediaPlayer MP);
 }

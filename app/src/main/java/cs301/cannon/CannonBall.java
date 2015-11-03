@@ -43,8 +43,6 @@ public class CannonBall {
      */
     public void initVel(double degrees) {
         angle = Math.toRadians(degrees);
-                //degrees * Math.PI / 180;
-
         double xVel = initVelocity * Math.cos(angle);
         xVelocity = (int) xVel;
         double yVel = initVelocity * Math.sin(angle);
